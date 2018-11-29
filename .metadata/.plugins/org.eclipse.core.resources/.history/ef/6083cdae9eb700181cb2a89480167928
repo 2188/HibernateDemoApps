@@ -1,0 +1,34 @@
+package com.m2m_xml;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Main_Many2Many {
+
+	public static SessionFactory sf;
+	
+	public static void main(String[] args) {
+		
+		sf = new Configuration().configure().buildSessionFactory();
+		
+		insertData ();
+
+	}
+	
+	private static void insertData () {
+		
+		Session session = sf.openSession();
+		
+		Item item = new Item();
+		item.setItemId(1);
+		item.setItemDes("Apple");
+		item.setPrice(100);
+		
+		Item item1 = new Item();
+		item1.setItemId(2);
+		item1.setItemDes("Onion");
+		item1.setPrice(80);
+	}
+
+}

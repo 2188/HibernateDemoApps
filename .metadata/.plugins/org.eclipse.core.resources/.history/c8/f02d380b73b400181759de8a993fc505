@@ -1,0 +1,41 @@
+package flight_pojos;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Carrier")
+public class Carriers {
+
+	@Id @GeneratedValue
+	@Column (name = "Id")
+	private int carrierID;
+	
+	@Column (name = "Name")
+	private String carrierName;
+	
+	@Column (name = "Code")
+	private String carrierCode;
+	
+	public int getCarrierID() {
+		return carrierID;
+	}
+	public void setCarrierID(int carrierID) {
+		this.carrierID = carrierID;
+	}
+	public String getCarrierName() {
+		return carrierName;
+	}
+	public void setCarrierName(String carrierName) {
+		this.carrierName = carrierName;
+	}
+	public String getCarrierCode() {
+		return carrierCode;
+	}
+	public void setCarrierCode(String carrierCode) {
+		this.carrierCode = carrierCode;
+	}
+}

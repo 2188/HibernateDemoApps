@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.vendor_customer.Vendor_DTO" table="Vendor">
+
+		<id name="vendorID" column="vendorID">
+			<generator class="increment" />  
+		</id>
+
+		<property name="vendorName" type="string" column="V_NAME" />
+
+		<set name="customers" cascade="all">
+			<key column="vendor_ID" not-null="true" />
+			<one-to-many class="com.vendor_customer.Customer_POJO" />
+		</set>
+
+	</class>
+</hibernate-mapping>

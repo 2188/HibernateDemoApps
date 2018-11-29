@@ -1,0 +1,28 @@
+package flight_pojos;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="Travel-Type")
+public class TravelType {
+
+	private int travelTypeID;
+	private String travelTypeName;
+	
+	public int getTravelTypeID() {
+		return travelTypeID;
+	}
+	public void setTravelTypeID(int travelTypeID) {
+		this.travelTypeID = travelTypeID;
+	}
+	public String getTravelTypeName() {
+		return travelTypeName;
+	}
+	public void setTravelTypeName(String travelTypeName) {
+		this.travelTypeName = travelTypeName;
+	}
+	
+	
+	
+}

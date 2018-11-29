@@ -1,0 +1,72 @@
+package flight_pojos;
+
+import java.sql.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "flight_details")
+public class FlightDetails {
+	
+	@Id
+	@Column (name = "Flight_Details_id")
+	private int flightDetl_ID;
+	
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "flightId")
+	private Flight flight;
+	private int travelTypeId;
+	private int locationId;
+	private int statusId;
+	private Date arrivalTime;
+	private Date departureTime;
+	
+	public int getFlightDetl_ID() {
+		return flightDetl_ID;
+	}
+	public void setFlightDetl_ID(int flightDetl_ID) {
+		this.flightDetl_ID = flightDetl_ID;
+	}
+	public int getFlightID() {
+		return flightID;
+	}
+	public void setFlightID(int flightID) {
+		this.flightID = flightID;
+	}
+	public int getTravelTypeId() {
+		return travelTypeId;
+	}
+	public void setTravelTypeId(int travelTypeId) {
+		this.travelTypeId = travelTypeId;
+	}
+	public int getLocationId() {
+		return locationId;
+	}
+	public void setLocationId(int locationId) {
+		this.locationId = locationId;
+	}
+	public int getStatusId() {
+		return statusId;
+	}
+	public void setStatusId(int statusId) {
+		this.statusId = statusId;
+	}
+	public Date getArrivalTime() {
+		return arrivalTime;
+	}
+	public void setArrivalTime(Date arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+	public Date getDepartureTime() {
+		return departureTime;
+	}
+	public void setDepartureTime(Date departureTime) {
+		this.departureTime = departureTime;
+	}
+}

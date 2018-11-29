@@ -1,0 +1,41 @@
+package flight_pojos;
+
+import java.sql.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "flight_details")
+public class FlightDetails {
+	
+	@Id
+	@Column (name = "Flight_Details_id")
+	private int flightDetl_ID;
+	
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "flightId")
+	private Flight flight;
+	
+	@Column (name = "Travel_Type_ID")
+	private int travelTypeId;
+	
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Location_ID")
+	private Location location;
+	
+	@Column (name = "Status_ID")
+	private int StatusId;
+	
+	@Column (name = "Arrival_Time")
+	private String arrivalTime;
+	
+	@Column (name = "Departure_Time")
+	private String departureTime;
+}

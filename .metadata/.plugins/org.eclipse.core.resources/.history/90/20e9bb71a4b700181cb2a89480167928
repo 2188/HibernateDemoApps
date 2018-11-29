@@ -1,0 +1,29 @@
+package com.m2m_xml;
+
+import java.util.Set;
+
+public class Item {
+
+	private long itemId;
+	private String itemDes;
+	private int price;
+	
+	public long getItemId() {
+		return itemId;
+	}
+	public void setItemId(long itemId) {
+		this.itemId = itemId;
+	}
+	public String getItemDes() {
+		return itemDes;
+	}
+	public void setItemDes(String itemDes) {
+		this.itemDes = itemDes;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+}

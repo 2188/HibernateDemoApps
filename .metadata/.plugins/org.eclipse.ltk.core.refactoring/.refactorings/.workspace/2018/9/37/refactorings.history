@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Many-To_Many_XML&apos; to &apos;Many-To_Many_XML_N_Annotation&apos;&#x0D;&#x0A;- Original element: &apos;Many-To_Many_XML&apos;&#x0D;&#x0A;- Renamed element: &apos;Many-To_Many_XML&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Many-To_Many_XML&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Many-To_Many_XML" name="Many-To_Many_XML_N_Annotation" references="true" stamp="1536879559424" version="1.0"/>
+</session>

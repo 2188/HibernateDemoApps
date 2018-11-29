@@ -1,0 +1,24 @@
+package com.m2m_xml;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Main_Many2Many {
+
+	public static SessionFactory sf;
+	
+	public static void main(String[] args) {
+		
+		sf = new Configuration().configure().buildSessionFactory();
+		
+		insertData ();
+
+	}
+	
+	private static void insertData () {
+		
+		
+		
+	}
+
+}

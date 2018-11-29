@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.hiber.update.UserDTO" table="User">
+		<id name="id">
+			<generator class="assigned" />
+		</id>
+		<property name="firstname" column="FNAME" />
+		<property name="lastname" column="LNAME" />
+		<property name="city" />
+		<property name="email" />
+		<property name="password" />
+		<property name="age" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,102 @@
+package test.mumbai_airport;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import flight_pojos.Carriers;
+import flight_pojos.Flight;
+import flight_pojos.FlightStatus;
+import flight_pojos.TravelType;
+
+public class Main_MumbaiAirport {
+
+	static SessionFactory s_factory;
+	
+	public static void main(String[] args) {
+	
+		s_factory = new Configuration().configure().buildSessionFactory();
+		
+//		saveTravelType();		//********* Save travel type
+		
+//		saveFlightStatus();		//********* Save flight status
+		
+		saveFlightData();		//********** Save flight data
+		
+		
+		
+		
+	}
+
+	//********** Save flight data **********
+	private static void saveFlightData() {
+		
+		Session session = s_factory.openSession();
+		
+		Carriers carrier = new Carriers();
+		carrier.setCarrierID(1);
+		carrier.setCarrierName("Jet Airways");
+		
+		Flight flight = new Flight();
+		flight.setFlightID(1);
+		flight.setFlightCode("AI 555");
+		flight.setFlightName("Air India Delhi - Bombay");
+//		flight.setCarriers(carrier);
+		
+		Set<Flight> flightArray = new HashSet<>();
+		flightArray.add(flight);
+		carrier.setFlightInfo(flightArray);
+		
+		session.save(flight);
+		
+		session.beginTransaction().commit();
+		
+		session.close();
+	}
+
+	//********* Save travel type ********
+	private static void saveTravelType() {
+		
+		Session session = s_factory.openSession();
+		
+		TravelType travelType = new TravelType();
+		travelType.setTravelTypeID(1);
+		travelType.setTravelTypeName("Arrival");
+		
+		TravelType travelType1 = new TravelType();
+		travelType1.setTravelTypeID(2);
+		travelType1.setTravelTypeName("Departure");
+		
+		session.save(travelType);
+		session.clear();
+		session.save(travelType1);
+		
+		session.beginTransaction().commit();
+		
+		session.close();
+	}
+
+	//********* Save flight status ********
+	private static void saveFlightStatus() {
+		
+		Session session = s_factory.openSession();
+		
+		FlightStatus flightStatus = new FlightStatus();
+		flightStatus.setFlight_statusId(1);
+		flightStatus.setFlight_Status("Landed");
+		
+		FlightStatus flightStatus1 = new FlightStatus();
+		flightStatus1.setFlight_statusId(2);
+		flightStatus1.setFlight_Status("Delayed");
+		
+		session.save(flightStatus);
+		session.save(flightStatus1);
+		
+		session.beginTransaction().commit();
+		
+		session.close();
+	}	
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.many2one.Customer_DTO" table="Customer">
+
+		<meta attribute="description">This is a class for customer detail</meta>
+
+		<id name="c_id" column="Cust_ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="c_name" type="string" column="Cust_Name" />
+
+		<many-to-one name="vendor" class="com.many2one.Vendor_DTO"
+			column="vendor_ID" cascade="all" not-null="false" />
+
+	</class>
+
+</hibernate-mapping>

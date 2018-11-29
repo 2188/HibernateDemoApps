@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.m2m_xml">
+
+	<class name="Item" table="Item">
+
+		<id name="itemId" type="long" column="Item_Id">
+			<generator class="identity"></generator>
+		</id>
+
+		<property name="itemDes" column="Item_Des" />
+
+		<property name="price" type="int" column="Item_Price"></property>
+
+		<set name="cartSet" table="Cart_Item" cascade="all">
+			<key column="Item_Id" />
+			<many-to-many class="Cart" column="Cart_ID"></many-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

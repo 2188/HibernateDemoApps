@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.vendor_customer.Customer_POJO" table="Customer">
+
+		<id name="customerID" column="Cust_ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="custName" column="Cust_Name"></property>
+
+	</class>
+	
+</hibernate-mapping>
